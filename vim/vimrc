@@ -1,0 +1,84 @@
+""""""""""""""""""""""""""""""
+" vundle
+""""""""""""""""""""""""""""""
+" both required by vundle
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'kien/ctrip.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'scrooloose/syntastic'
+call vundle#end()
+
+""""""""""""""""""""""""""""""
+" general
+""""""""""""""""""""""""""""""
+" how many lines of history VIM has to remember
+set history=500
+
+" auto reload file if its changed from outside
+set autoread
+
+let $LANG='en'
+set langmenu=en
+
+" height of command bar
+set cmdheight=2
+
+" a buffer becomes hidden when it's abandoned
+set hid
+
+" configure backspace so it acts as it should
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" searching
+set ignorecase
+set smartcase
+set magic
+
+" do not redraw while executing macros, good for performance
+set lazyredraw
+
+""""""""""""""""""""""""""""""
+" color and font
+""""""""""""""""""""""""""""""
+syntax enable
+
+set ffs=unix,mac,dos
+set encoding=utf8
+set background=dark
+
+try
+    colorscheme desert
+catch
+endtry
+
+""""""""""""""""""""""""""""""
+" tab and indent
+""""""""""""""""""""""""""""""
+set expandtab
+set smarttab
+
+set shiftwidth=4
+set tabstop=4
+
+" linebreak at 120
+set lbr
+set tw=120
+
+set ai
+set si
+set wrap
+
+""""""""""""""""""""""""""""""
+" misc
+""""""""""""""""""""""""""""""
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
